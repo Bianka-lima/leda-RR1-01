@@ -39,10 +39,12 @@ public class TestRepositorioProdutos {
 	}
 
 	@Test
-	public void testProcurar() {
-		assertNull(repositorio.procurar(5));
-		repositorio.inserir(new Produto(5,"Feijao",10.0,"Feijão carioca"));
-		assertNotNull(repositorio.procurar(5));		
-	}
+public void testProcurar() {
+    assertThrows(IllegalArgumentException.class, () -> {
+        repositorio.procurar(5);
+    });
+    repositorio.inserir(new Produto(5,"Feijao",10.0,"Feijão carioca"));
+    assertNotNull(repositorio.procurar(5));
+}
 
 }
