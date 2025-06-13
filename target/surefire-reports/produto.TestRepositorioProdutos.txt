@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: produto.TestRepositorioProdutos
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.146 sec <<< FAILURE!
-testProcurar(produto.TestRepositorioProdutos)  Time elapsed: 0.016 sec  <<< ERROR!
+Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.103 sec <<< FAILURE!
+testProcurar(produto.TestRepositorioProdutos)  Time elapsed: 0.018 sec  <<< ERROR!
 java.lang.IllegalArgumentException: O PRODUTO NÃO EXISTE
 	at produto.RepositorioProdutoArrayList.procurar(RepositorioProdutoArrayList.java:111)
 	at produto.TestRepositorioProdutos.testProcurar(TestRepositorioProdutos.java:43)
@@ -36,7 +36,7 @@ java.lang.IllegalArgumentException: O PRODUTO NÃO EXISTE
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testRemover(produto.TestRepositorioProdutos)  Time elapsed: 0.001 sec  <<< ERROR!
+testRemover(produto.TestRepositorioProdutos)  Time elapsed: 0.002 sec  <<< ERROR!
 java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
 	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)

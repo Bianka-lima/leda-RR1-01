@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="produto.TestRepositorioProdutos" time="0.018" errors="2" skipped="0">
+<testsuite tests="5" failures="0" name="produto.TestRepositorioProdutos" time="0.021" errors="2" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="24.0.1+9-30"/>
@@ -61,7 +61,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="produto.TestRepositorioProdutos" name="testProcurar" time="0.016">
+  <testcase classname="produto.TestRepositorioProdutos" name="testProcurar" time="0.018">
     <error message="O PRODUTO NÃO EXISTE" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: O PRODUTO NÃO EXISTE
 	at produto.RepositorioProdutoArrayList.procurar(RepositorioProdutoArrayList.java:111)
 	at produto.TestRepositorioProdutos.testProcurar(TestRepositorioProdutos.java:43)
@@ -96,7 +96,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
   </testcase>
-  <testcase classname="produto.TestRepositorioProdutos" name="testRemover" time="0.001">
+  <testcase classname="produto.TestRepositorioProdutos" name="testRemover" time="0.002">
     <error message="Index 0 out of bounds for length 0" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
 	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
@@ -138,6 +138,6 @@
 </error>
   </testcase>
   <testcase classname="produto.TestRepositorioProdutos" name="testAtualizar" time="0"/>
-  <testcase classname="produto.TestRepositorioProdutos" name="testExiste" time="0.001"/>
-  <testcase classname="produto.TestRepositorioProdutos" name="testInserir" time="0"/>
+  <testcase classname="produto.TestRepositorioProdutos" name="testExiste" time="0"/>
+  <testcase classname="produto.TestRepositorioProdutos" name="testInserir" time="0.001"/>
 </testsuite>
