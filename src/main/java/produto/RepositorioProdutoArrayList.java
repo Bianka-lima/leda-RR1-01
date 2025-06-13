@@ -40,8 +40,14 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int ind = -1;
+		int i = 0;
+		while (i > -1 & i <= index & ind == -1) {
+			Produto p = (Produto) produtos.get(i);
+			if (p.getCodigo() == codigo)
+				ind = i;
+		}
+		return ind;
 	}
 
 	/**
@@ -51,16 +57,18 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean bool = false;
+		if (procurarIndice(codigo) != -1)
+			bool = true;
+		return bool;
 	}
 
 	/**
 	 * Insere um novo produto (sem se preocupar com duplicatas)
 	 */
 	public void inserir(Produto produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		produtos.add(produto);
+		index++;
 	}
 
 	/**
@@ -69,8 +77,11 @@ public class RepositorioProdutoArrayList {
 	 * utilizado.
 	 */
 	public void atualizar(Produto produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int cod = produto.getCodigo();
+		if (!(existe(cod)))
+			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(cod);
+		produtos.set(ind, produto);
 	}
 
 	/**
@@ -81,8 +92,10 @@ public class RepositorioProdutoArrayList {
 	 * @param codigo
 	 */
 	public void remover(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (!(existe(codigo)))
+			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(codigo);
+		produtos.remove(ind);
 	}
 
 	/**
@@ -93,7 +106,10 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	public Produto procurar(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (!(existe(codigo)))
+			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(codigo);
+		Produto p = (Produto) produtos.get(ind);
+		return p;
 	}
 }
