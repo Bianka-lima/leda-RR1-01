@@ -42,7 +42,7 @@ public class RepositorioProdutoArrayList {
 	private int procurarIndice(int codigo) {
 		int ind = -1;
 		int i = 0;
-		while (i > -1 & i <= index & ind == -1) {
+		while (i <= index & ind == -1) {
 			Produto p = (Produto) produtos.get(i);
 			if (p.getCodigo() == codigo)
 				ind = i;
