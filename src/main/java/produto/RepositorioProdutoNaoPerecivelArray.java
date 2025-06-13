@@ -41,8 +41,14 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int ind = -1;
+		int i = 0;
+		while (ind == -1 & i < index & i > -1) {
+			if (produtos[i].getCodigo() == codigo) 
+				ind = i;
+			i++;
+		}
+		return ind;
 	}
 
 	/**
@@ -52,16 +58,20 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean bool = false;
+		if (procurarIndice(codigo) != -1)
+			bool = true;
+		return bool;
 	}
 
 	/**
 	 * Insere um novo produto (sem se preocupar com duplicatas)
 	 */
 	public void inserir(ProdutoNaoPerecivel produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (index < produtos.length -1) {
+			index ++;
+			produtos[index] = produto;
+		}
 	}
 
 	/**
@@ -70,8 +80,11 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * utilizado.
 	 */
 	public void atualizar(ProdutoNaoPerecivel produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int cod = produto.getCodigo();
+		if (!(existe(cod)))
+			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(cod);
+		produtos[ind] = produto;
 	}
 
 	/**
@@ -82,8 +95,15 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @param codigo
 	 */
 	public void remover(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (!(existe(codigo)))
+			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(codigo);
+		for (int i = ind; i < index; i++) {
+			ProdutoNaoPerecivel temp = produtos[i];
+			produtos[i] = produtos[i+1];
+			produtos[i+1] = temp;
+		}
+		produtos[index] = null;
 	}
 
 	/**
@@ -94,8 +114,10 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	public ProdutoNaoPerecivel procurar(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (!(existe(codigo)))
+			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(codigo);
+		return produtos[ind];
 	}
 
 }

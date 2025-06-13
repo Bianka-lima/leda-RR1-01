@@ -46,6 +46,7 @@ public class RepositorioProdutoArrayList {
 			Produto p = (Produto) produtos.get(i);
 			if (p.getCodigo() == codigo)
 				ind = i;
+			i++;
 		}
 		return ind;
 	}
