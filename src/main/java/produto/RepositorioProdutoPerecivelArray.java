@@ -31,7 +31,7 @@ public class RepositorioProdutoPerecivelArray {
 		super();
 		this.produtos = new ProdutoPerecivel[size];
 	}
-	}
+	
 
 	/**
 	 * Recebe o codigo do produto e devolve o indice desse produto no array ou
