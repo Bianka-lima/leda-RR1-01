@@ -45,9 +45,9 @@ public class RepositorioProdutoPerecivelArray {
 	private int procurarIndice(int codigo) {
 		int ind = -1;
 		int i = 0;
-		while (i > -1; i <= index; ind == -1) {
+		while (i > -1 & i <= index & ind == -1) {
 			ProdutoPerecivel pp = (ProdutoPerecivel) produtos[i];
-			if(p.getCodigo == codigo) 
+			if( pp.getCodigo() == codigo) 
 				ind = i;
 			i++;
 		}
