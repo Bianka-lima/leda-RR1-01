@@ -43,7 +43,7 @@ public class RepositorioProdutoNaoPerecivelArray {
 	private int procurarIndice(int codigo) {
 		int ind = -1;
 		int i = 0;
-		while (ind == -1 & i < index & i > -1) {
+		while (ind == -1 && i < index) {
 			if (produtos[i].getCodigo() == codigo) 
 				ind = i;
 			i++;

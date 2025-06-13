@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: produto.TestRepositorioProdutos
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.128 sec <<< FAILURE!
-testProcurar(produto.TestRepositorioProdutos)  Time elapsed: 0.032 sec  <<< ERROR!
+Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.146 sec <<< FAILURE!
+testProcurar(produto.TestRepositorioProdutos)  Time elapsed: 0.016 sec  <<< ERROR!
 java.lang.IllegalArgumentException: O PRODUTO NÃO EXISTE
 	at produto.RepositorioProdutoArrayList.procurar(RepositorioProdutoArrayList.java:111)
 	at produto.TestRepositorioProdutos.testProcurar(TestRepositorioProdutos.java:43)
