@@ -44,11 +44,12 @@ public class RepositorioProdutoPerecivelArray {
 	 */
 	private int procurarIndice(int codigo) {
 		int ind = -1;
-		for (int i = 0; i < produtos.length; i++) {
-			if (produtos[i].getCodigo() == codigo) {
+		int i = 0;
+		while (i > -1; i <= index; ind == -1) {
+			ProdutoPerecivel pp = (ProdutoPerecivel) produtos[i];
+			if(p.getCodigo == codigo) 
 				ind = i;
-				break;
-			}
+			i++;
 		}
 		return ind;
 	}
@@ -60,11 +61,10 @@ public class RepositorioProdutoPerecivelArray {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		for (int i = 0; i < produtos.length; i++) {
-			if (produtos[i].getCodigo() == codigo)
-				return true;
-		}
-		return false;
+		boolean bool = false;
+		if (procurarIndice(codigo) != -1)
+			bool = true;
+		return bool;
 	}
 
 	/**
@@ -84,10 +84,10 @@ public class RepositorioProdutoPerecivelArray {
 	 * utilizado.
 	 */
 	public void atualizar(ProdutoPerecivel produto) {
-		int codProd = produto.getCodigo();
-		int ind = procurarIndice(codProd); 
-		if (!(existe(ind)))
+		int codProd = produto.getCodigo(); 
+		if (!(existe(codProd)))
 			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(codProd);
 		produtos[ind] = produto;
 	}
 
@@ -99,9 +99,9 @@ public class RepositorioProdutoPerecivelArray {
 	 * @param codigo
 	 */
 	public void remover(int codigo) {
-		int ind = procurarIndice(codigo); 
-		if (!(existe(ind)))
+		if (!(existe(codigo)))
 			throw new IllegalArgumentException("O PRODUTO NÃO EXISTE");
+		int ind = procurarIndice(codigo); 
 		for (int i = ind; i < index; i++) {
 			ProdutoPerecivel temp = produtos[i];
 			produtos[i] = produtos[i+1];
